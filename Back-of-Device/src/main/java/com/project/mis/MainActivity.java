@@ -19,9 +19,7 @@ import java.util.concurrent.TimeUnit;
  *      https://www.tutorialspoint.com/android/android_mediaplayer.htm
  */
 
-public class MainActivity extends AppCompatActivity implements OnSwipeListener {
-    private Backhand backhand;
-
+public class MainActivity extends AppCompatActivity {
     private SeekBar seekbar;
     private MediaPlayer mediaPlayer;
     public TextView songName, duration;
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements OnSwipeListener {
         setContentView(R.layout.activity_main);
         initializeViews();
     }
-
+    
     public void initializeViews(){
         mediaPlayer = MediaPlayer.create(this, R.raw.song);
         duration = (TextView) findViewById(R.id.songDuration);
@@ -91,23 +89,5 @@ public class MainActivity extends AppCompatActivity implements OnSwipeListener {
             startTime = startTime - backwardTime;
             mediaPlayer.seekTo((int) startTime);
         }
-    }
-
-
-    @Override
-    public void onSwipe(Swipe swipe) throws CameraAccessException {
-        backhand.onResume();
-        mediaPlayer.start();
-        finalTime = mediaPlayer.getDuration();
-        startTime = mediaPlayer.getCurrentPosition();
-
-        seekbar.setProgress((int) startTime);
-        handler.postDelayed(updateSeekBarTime, 100);
-    }
-
-    @Override
-    public void onTap(Tap tap) {
-        backhand.onPause();
-        mediaPlayer.pause();
     }
 }
