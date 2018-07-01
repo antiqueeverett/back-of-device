@@ -1,5 +1,7 @@
 package com.project.mis;
 
+import android.annotation.SuppressLint;
+import android.hardware.camera2.CameraAccessException;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +10,8 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import org.opencv.android.CameraBridgeViewBase;
+
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -15,7 +19,8 @@ import java.util.concurrent.TimeUnit;
  *      https://www.tutorialspoint.com/android/android_mediaplayer.htm
  */
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements OnSwipeListener {
+    private Backhand backhand;
 
     private SeekBar seekbar;
     private MediaPlayer mediaPlayer;
@@ -23,6 +28,9 @@ public class MainActivity extends AppCompatActivity{
     private Handler handler = new Handler();
     private double startTime = 0, finalTime = 0;
     private int forwardTime = 5000, backwardTime = 5000;
+
+    private CameraBridgeViewBase mOpenCvCameraView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +50,7 @@ public class MainActivity extends AppCompatActivity{
 
     // seekBar - handle
     private Runnable updateSeekBarTime = new Runnable() {
+        @SuppressLint("DefaultLocale")
         public void run() {
             startTime = mediaPlayer.getCurrentPosition(); //get current position
             seekbar.setProgress((int) startTime);         //set seekbar progress
@@ -82,5 +91,23 @@ public class MainActivity extends AppCompatActivity{
             startTime = startTime - backwardTime;
             mediaPlayer.seekTo((int) startTime);
         }
+    }
+
+
+    @Override
+    public void onSwipe(Swipe swipe) throws CameraAccessException {
+        backhand.onResume();
+        mediaPlayer.start();
+        finalTime = mediaPlayer.getDuration();
+        startTime = mediaPlayer.getCurrentPosition();
+
+        seekbar.setProgress((int) startTime);
+        handler.postDelayed(updateSeekBarTime, 100);
+    }
+
+    @Override
+    public void onTap(Tap tap) {
+        backhand.onPause();
+        mediaPlayer.pause();
     }
 }
