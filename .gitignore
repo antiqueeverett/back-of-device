@@ -5,3 +5,5 @@ development/.idea/
 development/.gradle/
 development/build/
 development/local.properties
+development/gradlew.bat
+development/gradlew
