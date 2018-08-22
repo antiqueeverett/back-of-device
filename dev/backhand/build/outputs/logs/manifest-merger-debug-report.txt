@@ -1,45 +1,45 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:1-7:12
+ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:2:5-35
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:2:5-35
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:1-7:12
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:1-7:12
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:1-7:12
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:1-7:12
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:4:5-65
+ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:4:5-65
 	android:name
-		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:4:22-62
+		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:4:22-62
 uses-feature#android.hardware.camera
-ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:5:5-60
+ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:5:5-60
 	android:name
-		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml:5:19-57
+		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml:5:19-57
 uses-sdk
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\development\backhand\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Everett\Dropbox\gitHub\cs\android\back-of-device\dev\backhand\src\main\AndroidManifest.xml

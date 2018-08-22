@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/backhand/backhand.iml" filepath="$PROJECT_DIR$/backhand/backhand.iml" />
-      <module fileurl="file://$PROJECT_DIR$/development.iml" filepath="$PROJECT_DIR$/development.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dev.iml" filepath="$PROJECT_DIR$/dev.iml" />
       <module fileurl="file://$PROJECT_DIR$/openCVLibrary341/openCVLibrary341.iml" filepath="$PROJECT_DIR$/openCVLibrary341/openCVLibrary341.iml" />
     </modules>
   </component>

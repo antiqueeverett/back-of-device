@@ -21,8 +21,6 @@ import com.elmeyer.backhand.Backhand;
 import com.elmeyer.backhand.Swipe;
 import com.elmeyer.backhand.Tap;
 
-import org.opencv.android.CameraBridgeViewBase;
-
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -38,17 +36,27 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
     private SeekBar seekbar;
     private MediaPlayer mediaPlayer;
     public TextView songName, duration;
+    private int [] songList  =  new int [3];
     private Handler handler = new Handler();
     private double startTime = 0, finalTime = 0;
     private int forwardTime = 5000, backwardTime = 5000;
+    private int skip = 0;
 
     private static Backhand backhand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //set view
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initializeViews();
+
+        // populate song list
+        songList[0] =  R.raw.song_1;
+        songList[1] =  R.raw.song_2;
+        songList[2] =  R.raw.song_3;
+
+        //init view
+        initializeViews(0);
 
         AsyncTask.execute(new Runnable() {
             @Override
@@ -92,8 +100,8 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
         }
     }
     
-    public void initializeViews(){
-        mediaPlayer = MediaPlayer.create(this, R.raw.atmosphere);
+    public void initializeViews(int song){
+        mediaPlayer = MediaPlayer.create(this, songList[song]); //magic happens here
         duration = (TextView) findViewById(R.id.songDuration);
         seekbar = (SeekBar) findViewById(R.id.seekBar);
         finalTime = mediaPlayer.getDuration();
@@ -123,12 +131,35 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
         handler.postDelayed(updateSeekBarTime, 100);
     }
 
-    // pause
+    // media player pause
     public void pause(View view) {
         mediaPlayer.pause();
     }
 
-    // forward
+    // media player recursive skip forward
+//    public void skipForward(View view) {
+//        mediaPlayer.stop();
+//        skip++;
+//        initializeViews(skip);
+//        if(skip == 2){
+//            skip = -1;
+//        }
+//        play(null);
+//    }
+
+    // media player recursive skip backward
+//    public void skipBackward(View view) {
+//        mediaPlayer.stop();
+//        skip++;
+//        initializeViews(skip);
+//        if(skip == 2){
+//            skip = -1;
+//        }
+//        play(null);
+//    }
+
+
+    // media player forward
     public void forward(View view) {
         int temp = (int)startTime;
         if((temp+forwardTime)<=finalTime){
@@ -137,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
         }
     }
 
-    // rewind
+    // media player rewind
     public void rewind(View view) {
         int temp = (int)startTime;
         if((temp-backwardTime)>0){
@@ -169,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     @Override
     public void onPause() {
-        backhand.onPause();
+        //backhand.onPause(); todo : Attempt to invoke virtual method 'void com.elmeyer.backhand.Backhand.onPause()' on a null object reference
         super.onPause();
     }
 
