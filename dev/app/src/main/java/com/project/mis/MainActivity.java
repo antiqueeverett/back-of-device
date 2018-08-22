@@ -137,26 +137,26 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
     }
 
     // media player recursive skip forward
-//    public void skipForward(View view) {
-//        mediaPlayer.stop();
-//        skip++;
-//        initializeViews(skip);
-//        if(skip == 2){
-//            skip = -1;
-//        }
-//        play(null);
-//    }
+    public void skipForward(View view) {
+        mediaPlayer.stop();
+        skip++;
+        initializeViews(skip);
+        if(skip == 2){
+            skip = -1;
+        }
+        play(null);
+    }
 
     // media player recursive skip backward
-//    public void skipBackward(View view) {
-//        mediaPlayer.stop();
-//        skip++;
-//        initializeViews(skip);
-//        if(skip == 2){
-//            skip = -1;
-//        }
-//        play(null);
-//    }
+    public void skipBackward(View view) {
+        mediaPlayer.stop();
+        skip--;
+        initializeViews(skip);
+        if(skip == 0){
+            skip = 3;
+        }
+        play(null);
+    }
 
 
     // media player forward
