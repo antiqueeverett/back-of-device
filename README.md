@@ -1,3 +1,3 @@
 # WIP: back-of-device
 
-###TODO: outstanding issues
+* check: outstanding issues
