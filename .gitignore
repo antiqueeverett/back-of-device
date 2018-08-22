@@ -2,16 +2,8 @@
 
 .idea/
 development/.idea/
-development/build/
-development/gradlew
-development/.gradle/
-development/gradlew.bat
-development/backhand/build/
-development/settings.gradle
 development/local.properties
-development/gradle.properties
 
-development/build.gradle
 
 
 
