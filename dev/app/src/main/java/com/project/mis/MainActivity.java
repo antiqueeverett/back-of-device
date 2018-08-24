@@ -221,6 +221,17 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
             rewind(null);
         }
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mediaPlayer.pause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayer.pause();
+    }
 
 
     @Override
