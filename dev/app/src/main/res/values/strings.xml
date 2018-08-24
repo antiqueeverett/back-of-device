@@ -4,4 +4,6 @@
     <string name="rewind"><![CDATA[<<]]></string>
     <string name="forward"><![CDATA[>>]]></string>
     <string name="pause">||</string>
+    <string name="todo">todo</string>
+    <string name="timer">--:--</string>
 </resources>

@@ -29,55 +29,60 @@
             style="@android:style/Widget.Holo.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:onClick="rewind"
             android:src="@android:drawable/ic_media_rew"
-            android:contentDescription="TODO" />
+            android:contentDescription="@string/todo" />
 
         <ImageButton
             android:id="@+id/media_skipBackward"
             style="@android:style/Widget.Holo.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:onClick="skipBackward"
-            app:srcCompat="@android:drawable/ic_media_previous" />
+            app:srcCompat="@android:drawable/ic_media_previous"
+            android:contentDescription="@string/todo" />
 
         <ImageButton
             android:id="@+id/media_play"
             style="@android:style/Widget.Holo.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:onClick="play"
-            android:src="@android:drawable/ic_media_play" />
+            android:src="@android:drawable/ic_media_play"
+            android:contentDescription="@string/todo" />
 
         <ImageButton
             android:id="@+id/media_pause"
             style="@android:style/Widget.Holo.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:onClick="pause"
-            android:src="@android:drawable/ic_media_pause" />
+            android:src="@android:drawable/ic_media_pause"
+            android:contentDescription="@string/todo" />
 
         <ImageButton
             android:id="@+id/media_skipForward"
             style="@android:style/Widget.Holo.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:onClick="skipForward"
-            app:srcCompat="@android:drawable/ic_media_next"/>
+            app:srcCompat="@android:drawable/ic_media_next"
+            android:contentDescription="@string/todo" />
 
         <ImageButton
             android:id="@+id/media_ff"
             style="@android:style/Widget.Holo.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:onClick="forward"
-            android:src="@android:drawable/ic_media_ff" />
+            android:src="@android:drawable/ic_media_ff"
+            android:contentDescription="@string/todo" />
     </LinearLayout>
 
     <ImageView
@@ -96,7 +101,8 @@
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439" />
+        app:layout_constraintVertical_bias="0.439"
+        android:contentDescription="@string/todo"/>
 
     <TextView
         android:id="@+id/songDuration"
@@ -107,7 +113,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="......"
+        android:text="@string/timer"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/mp3Image"
         app:layout_constraintEnd_toEndOf="parent"
