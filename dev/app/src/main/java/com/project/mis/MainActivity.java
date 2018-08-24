@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -37,10 +38,12 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
     private MediaPlayer mediaPlayer;
     public TextView songName, duration;
     private int [] songList  =  new int [3];
+    private int [] song_thumbnail = new int [3];
     private Handler handler = new Handler();
     private double startTime = 0, finalTime = 0;
     private int forwardTime = 5000, backwardTime = 5000;
     private int skip = 0;
+    ImageView imageView;
 
     private static Backhand backhand;
 
@@ -55,8 +58,13 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
         songList[1] =  R.raw.song_2;
         songList[2] =  R.raw.song_3;
 
+        //song thumbnails
+        song_thumbnail[0] =  R.drawable.thumb_1;
+        song_thumbnail[1] =  R.drawable.thumb_2;
+        song_thumbnail[2] =  R.drawable.thumb_3;
+
         //init view
-        initializeViews(0);
+        initializeViews(skip);
 
         AsyncTask.execute(new Runnable() {
             @Override
@@ -95,13 +103,16 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
                 } else {
                     Log.e(TAG, "Unable to instantiate Backhand! Reason: Camera permission not granted");
                 }
-                return;
+                //return; void return signature
             }
         }
     }
     
     public void initializeViews(int song){
-        mediaPlayer = MediaPlayer.create(this, songList[song]); //magic happens here
+        imageView = (ImageView) findViewById(R.id.mp3Image);
+        imageView.setImageResource(song_thumbnail[song]);
+
+        mediaPlayer = MediaPlayer.create(this, songList[song]);
         duration = (TextView) findViewById(R.id.songDuration);
         seekbar = (SeekBar) findViewById(R.id.seekBar);
         finalTime = mediaPlayer.getDuration();
