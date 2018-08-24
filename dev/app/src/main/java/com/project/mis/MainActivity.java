@@ -7,16 +7,17 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.elmeyer.backhand.Backhand;
 import com.elmeyer.backhand.Swipe;
@@ -42,8 +43,9 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
     private Handler handler = new Handler();
     private double startTime = 0, finalTime = 0;
     private int forwardTime = 5000, backwardTime = 5000;
-    private int skip = 0;
+    private int skip = 1;
     ImageView imageView;
+    boolean check = false;
 
     private static Backhand backhand;
 
@@ -125,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
         @SuppressLint("DefaultLocale")
         public void run() {
             startTime = mediaPlayer.getCurrentPosition(); //get current position
-            seekbar.setProgress((int) startTime);         //set seekbar progress
+            seekbar.setProgress((int) startTime);         //set seek-bar progress
             double timeRemaining = finalTime - startTime; //set time remaining
             duration.setText(String.format("%d min, %d sec", TimeUnit.MILLISECONDS.toMinutes((long) timeRemaining), TimeUnit.MILLISECONDS.toSeconds((long) timeRemaining) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long) timeRemaining))));
             handler.postDelayed(this, 100); //repeat evert 100 milliseconds
@@ -134,6 +136,10 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     // play
     public void play(View view) {
+        if(!check){
+            Toast.makeText(getApplicationContext(), "TIP: you can double tap camera to play or pause! ", Toast.LENGTH_LONG).show();
+            check = true;
+        }
         mediaPlayer.start();
         finalTime = mediaPlayer.getDuration();
         startTime = mediaPlayer.getCurrentPosition();
@@ -144,11 +150,13 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     // media player pause
     public void pause(View view) {
+        Toast.makeText(getApplicationContext(), "TIP: you can double tap camera to play or pause! ", Toast.LENGTH_LONG).show();
         mediaPlayer.pause();
     }
 
     // media player recursive skip forward
     public void skipForward(View view) {
+        Toast.makeText(getApplicationContext(), "TIP: you can swipe right on camera to skip forward! ", Toast.LENGTH_LONG).show();
         mediaPlayer.stop();
         if(skip == 2){
             skip = 0;
@@ -162,6 +170,7 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     // media player recursive skip backward
     public void skipBackward(View view) {
+        Toast.makeText(getApplicationContext(), "TIP: you can swipe left on camera to skip backward! ", Toast.LENGTH_LONG).show();
         mediaPlayer.stop();
         if(skip == 0){
             skip = 2;
@@ -176,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     // media player forward
     public void forward(View view) {
+        Toast.makeText(getApplicationContext(), "TIP: you can triple tap camera to scrub forward! ", Toast.LENGTH_LONG).show();
         int temp = (int)startTime;
         if((temp+forwardTime)<=finalTime){
             startTime = startTime + forwardTime;
