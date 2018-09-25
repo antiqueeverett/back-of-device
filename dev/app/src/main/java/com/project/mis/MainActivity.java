@@ -9,6 +9,8 @@ import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     private static Backhand backhand;
 
+    private static HandlerThread handlerThread = new HandlerThread("FpsHandlerThread");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //set view
@@ -68,6 +72,9 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
         //init view
         initializeViews(skip);
 
+        // initialize Handler for background tasks such as FPS counting
+        handlerThread.start();
+
         AsyncTask.execute(new Runnable() {
             @Override
             public void run()
@@ -79,7 +86,8 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
                 } else {
                     try {
                         backhand = new Backhand(MainActivity.this,
-                                MainActivity.this.getSystemService(CameraManager.class));
+                                MainActivity.this.getSystemService(CameraManager.class),
+                                handlerThread.getLooper());
                     } catch (CameraAccessException e) {
                         Log.e(TAG, "Unable to instantiate Backhand!");
                         e.printStackTrace();
@@ -97,7 +105,8 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
                 if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     try {
-                        backhand = new Backhand(this, this.getSystemService(CameraManager.class));
+                        backhand = new Backhand(this, this.getSystemService(CameraManager.class),
+                                                handlerThread.getLooper());
                     } catch (CameraAccessException e) {
                         Log.e(TAG, "Unable to instantiate Backhand!");
                         e.printStackTrace();
