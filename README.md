@@ -1,3 +1,3 @@
-# WIP: back-of-device
+Implementation of mobile device backside interaction using the rear camera as an input sensor.
 
-* check: outstanding issues
+![alt text](dev/music_player.jpg)
