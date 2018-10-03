@@ -49,7 +49,11 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
     private int forwardTime = 5000, backwardTime = 5000;
     private int skip = 1;
     ImageView imageView;
-    boolean check = false;
+
+    boolean play_tip = false;
+    boolean scrub_tip = false;
+    boolean skip_tip = false;
+
 
     private static Backhand backhand;
 
@@ -148,9 +152,9 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     // play
     public void play(View view) {
-        if(!check){
+        if(!play_tip){
             Toast.makeText(getApplicationContext(), "TIP: you can double tap camera to play or pause! ", Toast.LENGTH_LONG).show();
-            check = true;
+            play_tip = true;
         }
         mediaPlayer.start();
         finalTime = mediaPlayer.getDuration();
@@ -162,13 +166,19 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     // media player pause
     public void pause(View view) {
-        Toast.makeText(getApplicationContext(), "TIP: you can double tap camera to play or pause! ", Toast.LENGTH_LONG).show();
+        if(!play_tip){
+            Toast.makeText(getApplicationContext(), "TIP: you can double tap camera to play or pause! ", Toast.LENGTH_LONG).show();
+            play_tip = true;
+        }
         mediaPlayer.pause();
     }
 
     // media player recursive skip forward
     public void skipForward(View view) {
-        Toast.makeText(getApplicationContext(), "TIP: you can swipe right on camera to skip forward! ", Toast.LENGTH_LONG).show();
+        if(!skip_tip){
+            Toast.makeText(getApplicationContext(), "TIP: you can swipe up/down on camera to skip sound tracks! ", Toast.LENGTH_LONG).show();
+            skip_tip = true;
+        }
         mediaPlayer.stop();
         if(skip == 2){
             skip = 0;
@@ -182,7 +192,10 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     // media player recursive skip backward
     public void skipBackward(View view) {
-        Toast.makeText(getApplicationContext(), "TIP: you can swipe left on camera to skip backward! ", Toast.LENGTH_LONG).show();
+        if(!skip_tip){
+            Toast.makeText(getApplicationContext(), "TIP: you can swipe up/down on camera to skip sound tracks! ", Toast.LENGTH_LONG).show();
+            skip_tip = true;
+        }
         mediaPlayer.stop();
         if(skip == 0){
             skip = 2;
@@ -197,7 +210,10 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     // media player forward
     public void forward(View view) {
-        Toast.makeText(getApplicationContext(), "TIP: you can triple tap camera to scrub forward! ", Toast.LENGTH_LONG).show();
+        if(!scrub_tip){
+            Toast.makeText(getApplicationContext(), "TIP: you can triple tap camera to scrub through a sound track! ", Toast.LENGTH_LONG).show();
+            scrub_tip = true;
+        }
         int temp = (int)startTime;
         if((temp+forwardTime)<=finalTime){
             startTime = startTime + forwardTime;
@@ -207,6 +223,10 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     // media player rewind
     public void rewind(View view) {
+        if(!scrub_tip){
+            Toast.makeText(getApplicationContext(), "TIP: you can triple tap camera to scrub through a sound track! ", Toast.LENGTH_LONG).show();
+            scrub_tip = true;
+        }
         int temp = (int)startTime;
         if((temp-backwardTime)>0){
             startTime = startTime - backwardTime;
