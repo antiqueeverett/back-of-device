@@ -5,7 +5,7 @@
 
 ## INSTALLATION
 
-Due to the fact that Taps and Swipes cannot currently be detected at the same time, you have to make a choice between the two provided APKs. The supported actions are described in the Report. If you wish to compile the project yourself, simply import the "dev" folder into Android Studio as an existing project; it contains all necessary dependencies.
+Due to the fact that Taps and Swipes cannot currently be detected at the same time, you have to make a choice between the two provided APKs. The supported actions are described in the Report. If you wish to compile the project yourself, simply import the project into Android Studio; it contains all necessary dependencies.
 
 See also the [Backhand module](https://github.com/elmeyer/backhand) as part of this app.
 
