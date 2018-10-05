@@ -2,15 +2,16 @@ package com.project.mis;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.Looper;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     private SeekBar seekbar;
     private MediaPlayer mediaPlayer;
+    private AudioManager audioManager;
     public TextView songName, duration;
     private int [] songList  =  new int [3];
     private int [] song_thumbnail = new int [3];
@@ -124,6 +126,7 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
         imageView.setImageResource(song_thumbnail[song]);
 
         mediaPlayer = MediaPlayer.create(this, songList[song]);
+        audioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
         duration = (TextView) findViewById(R.id.songDuration);
         seekbar = (SeekBar) findViewById(R.id.seekBar);
         finalTime = mediaPlayer.getDuration();
@@ -213,7 +216,23 @@ public class MainActivity extends AppCompatActivity implements Backhand.OnSwipeL
 
     @Override
     public void onSwipe(Swipe swipe) {
-        // do nothing
+        if (swipe == Swipe.UP) {
+            audioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
+        } else if (swipe == Swipe.LEFT) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    skipBackward(null);
+                }
+            });
+        } else if (swipe == Swipe.RIGHT) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    skipForward(null);
+                }
+            });
+        }
     }
 
     @Override
